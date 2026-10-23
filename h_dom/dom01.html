@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p>Hello, World</p>
+    <strong class="test">글자를 파란색으로!</strong>
+</body>
+<script>
+    // const p = document.getElementsByTagName("p")
+    // p[0].innerText = "하이"
+    // console.log(p[0].innerText)
+    const strong = document.getElementsByClassName("test")[0]
+    strong.style.color = "blue"
+    console.log(strong)
+</script>
+</html>

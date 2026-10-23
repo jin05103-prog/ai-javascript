@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 이름을 이용한 선택</title>
+</head>
+<body>
+    <div>
+        <h1>클랙스를 이용한 선택(JS)</h1>
+        <ul>
+            <li class="list odd">첫 번째 아이템이에요</li>
+            <li class="list even">두 번째 아이템이에요</li>
+            <li class="list odd">세 번째 아이템이에요</li>
+            <li class="list even">네 번째 아이템이에요</li>
+            <li class="list odd">다섯 번째 아이템이에요</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const list = document.getElementsByClassName("list")
+    console.log(list)
+    HTMLCollection.prototype.forEach = Array.prototype.forEach
+
+    const colors = {
+        odd: "pink",
+        even: "green"
+    }
+
+    // list.forEach((li, i, list) => {
+    //     i % 2 == 0 ? li.style.color = "green" : li.style.color = "pink"
+    // });
+
+    list.forEach((li, i, list) => { li.style.color = colors[li.classList[1]] })
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>name 속성을 이용한 선택</title>
+    </head>
+    <body>
+        <h1>name 속성을 이용한 선택</h1>
+        <div>
+            <input
+                value="test123@gmail.com"
+                type="text"
+                name="name"
+                placeholder="이름을 입력하세요" />
+            <input
+                type="text"
+                name="password"
+                placeholder="비밀번호를 입력하세요" />
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" name="language" value="C" checked />
+                <span>C</span>
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="JS" />
+                <span>JS</span>
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="Python" />
+                <span>Python</span>
+            </label>
+        </div>
+    </body>
+    <script>
+        const checkboxes = document.getElementsByName("language");
+        console.log(checkboxes);
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+        // checkboxes.forEach((checkbox) => checkbox.checked = true)
+
+        NodeList.prototype.filter = Array.prototype.filter;
+        console.log(checkboxes.filter((checkbox) => !checkbox.checked));
+    </script>
+</html>

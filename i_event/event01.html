@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이벤트01</title>
+    </head>
+    <body>
+        <p class="text">CSS 동적 스타일 변경</p>
+        <button>커져라</button>
+    </body>
+    <script>
+        const p = document.querySelector(".text");
+        const button = document.querySelector("button");
+
+        button.addEventListener("click", (e) => {
+            console.log("e", e);
+            p.style.color = "blue";
+            // 버튼 눌렀을 때 폰트 크기를 30px로 변경
+            p.style.fontSize = "30px";
+        });
+
+        console.log(p);
+        console.log(button);
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>키보드 이벤트</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" class="text-input" />
+            <p class="name"></p>
+        </div>
+    </body>
+    <script>
+        // 사용자가 입력한 글자를 실시간으로 p태그에 보여주기
+        const input = document.querySelector(".text-input");
+        const p = document.querySelector(".name");
+
+        // input.addEventListener("keypress", (e) => {
+        //     p.innerText = input.value;
+        // });
+
+        // input.addEventListener("keydown", (e) => {
+        //     p.innerText = input.value;
+        // });
+
+        // input.addEventListener("keyup", (e) => {
+        //     p.innerText = input.value;
+        // });
+
+        // input.addEventListener("keyup", (e) => {
+        //     if (e.key === "Enter"){
+        //         p.innerHTML = e.target.value
+        //     }
+        // });
+
+        input.addEventListener("input", (e) => {
+            p.innerText = input.value;
+        });
+    </script>
+</html>
