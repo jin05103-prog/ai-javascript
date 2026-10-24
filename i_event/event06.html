@@ -1,36 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전체 동의 로직을 완성하라!</title>
-</head>
-<body>
-    <form>
-        <div>
-            <label>
-                <span>전체 동의</span>
-                <input type="checkbox" name="all" class="all" value="all" />
-            </label>
-        </div>
-        <div>
-            <label>
-                <span>서비스 이용약관 동의</span>
-                <input type="checkbox" name="term1" class="term" value="term1" />
-            </label>
-        </div>
-        <div>
-            <label>
-                <span>광고 수신 동의</span>
-                <input type="checkbox" name="term2" class="term" value="term2" />
-            </label>
-        </div>
-        <div>
-            <label>
-                <span>개인 정보 이용약관 동의</span>
-                <input type="checkbox" name="term3" class="term" value="term3" />
-            </label>
-        </div>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>전체 동의 로직을 완성하라!</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label>
+                    <span>전체 동의</span>
+                    <input type="checkbox" name="all" class="all" value="all" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <span>서비스 이용약관 동의</span>
+                    <input
+                        type="checkbox"
+                        name="term1"
+                        class="term"
+                        value="term1" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <span>광고 수신 동의</span>
+                    <input
+                        type="checkbox"
+                        name="term2"
+                        class="term"
+                        value="term2" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <span>개인 정보 이용약관 동의</span>
+                    <input
+                        type="checkbox"
+                        name="term3"
+                        class="term"
+                        value="term3" />
+                </label>
+            </div>
+        </form>
+    </body>
+    <script>
+        const all = document.querySelector("input.all");
+        const terms = document.querySelectorAll(".term");
+
+        NodeList.prototype.forEach = Array.prototype.forEach;
+
+        all.addEventListener("change", (e) => {
+            terms.forEach((term) => {
+                term.checked = e.target.checked;
+            });
+        });
+
+        terms.forEach((term) => {
+            term.addEventListener("change", (e) => {
+                if (!e.target.checked) {
+                    all.checked = false;
+                    return;
+                }
+
+                let checkFlag = true
+
+                terms.forEach((term2) => {
+                    if (!term2.checked) {
+                        checkFlag = false
+                    }                    
+                }); 
+
+                all.checked = checkFlag
+            });
+        });
+    </script>
 </html>
